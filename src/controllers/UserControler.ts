@@ -46,23 +46,21 @@ class UserController {
         throw new Error("o password is required");
       }
 
-      let userDB: any = await User.find({ userName: userName });
+      let userDB: any = await User.findOne({ userName: userName });
 
       if (!userDB) {
 
         throw new Error("user name not found");
       }
 
-      let passwordValid = await bcryptjs.compare(password, userDB[0].password)
+      let passwordValid = await bcryptjs.compare(password, userDB.password)
 
       const token = jwt.sign({ id: userDB._id, email: userDB.email }, config.db.tokenSecret || "", {
         expiresIn: process.env.TOKEN_EXPIRATION,
       });
       if (passwordValid) {
         user = {
-          email: userDB[0].email,
-          userName: userDB[0].userName,
-          logged: true,
+          user: userDB,
           token: token
         };
       }
