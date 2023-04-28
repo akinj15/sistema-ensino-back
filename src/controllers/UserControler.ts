@@ -78,12 +78,12 @@ class UserController {
     return response.status(200).send(result)
   }
   async findUser(request: Request, response: Response) {
-    const userName = request.query.username;
+    const _id = request.query.id;
     try {
-      if (!userName) {
-        throw new Error("user name is required");
+      if (!_id) {
+        throw new Error("id is required");
       }
-      let user = await User.findOne({ userName: userName });
+      let user = await User.findOne({ _id });
 
       return response.status(200).send(user)
 
