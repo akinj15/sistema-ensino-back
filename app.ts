@@ -1,7 +1,7 @@
 import * as express from "express"
 import router from "./src/routes"
 import * as cors from "cors"
-let app = express();
+let app = express.default();
 
 
 const allowedOrigins = [
@@ -11,9 +11,6 @@ const allowedOrigins = [
     'http://127.0.0.1:9001', 
     'http://127.0.0.1:8080', 
 ];
-let corsOptions = {
-    origin: "*"
-};
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
 };
@@ -22,6 +19,6 @@ const options: cors.CorsOptions = {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(router);
-app.use(cors(corsOptions));
+app.use(cors.default(options));
 
 export default app;
