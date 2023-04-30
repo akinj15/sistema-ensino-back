@@ -1,12 +1,14 @@
 import { Response, Request } from "express";
 import CheckPoint from "../database/schemas/CheckPoint";
 import CheckPointModel from "../models/CheckPoint"
+import { stringify } from "querystring";
 
 class CheckPointController {
   async create(request: Request, response: Response) {
     const body = request.body;
     const checkPoint: CheckPointModel = {
       user: body.user,
+      userName: body.userName,
       service: body.service,
       moment: body.moment,
       scheduled: body.scheduled,
@@ -33,8 +35,17 @@ class CheckPointController {
   async findCheckPoint(request: Request, response: Response) {
     const user = request.query.user;
     const classe = request.query.classe;
+    const moment = request.query.moment;
+    console.log({ user, classe, moment}, 111111);
     try {
-      let curso = await CheckPoint.find({ user, classe});
+      let curso;
+      if (classe && !user && !moment) {
+        curso = await CheckPoint.find({classe});
+      }
+      if(classe && user && moment) {
+        curso = await CheckPoint.find({classe, user, moment});
+      }
+      console.log(curso)
       return response.status(200).send(curso)
     } catch (e) {
       return response.status(401).send({ error: e })
@@ -42,8 +53,8 @@ class CheckPointController {
   }
 
   async editCheckPoint(request: Request, response: Response) {
-    const { user, service, _id , moment, scheduled, info, present, classe} = request.body;
-    const checkPoint: CheckPointModel = { user, service, moment, scheduled, info, present, classe }
+    const { user, userName, service, _id , moment, scheduled, info, present, classe} = request.body;
+    const checkPoint: CheckPointModel = { user, userName, service, moment, scheduled, info, present, classe }
     try {
       let result = await CheckPoint.updateOne(
         { _id: _id },

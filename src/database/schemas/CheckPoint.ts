@@ -5,6 +5,10 @@ const CheckPoints = new mongoose.Schema({
     type: String,
     require: true
   },
+  userName: {
+    type: String,
+    require: true
+  },
   classe: {
     type: String,
     require: true
@@ -14,7 +18,7 @@ const CheckPoints = new mongoose.Schema({
     require: true,
   },
   moment: {
-    type: Date,
+    type: String,
     require: true,
   },
   scheduled: {

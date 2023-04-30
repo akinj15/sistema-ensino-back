@@ -35,18 +35,18 @@ class UserController {
   }
 
   async login(request: Request, response: Response) {
-    const { userName, password } = request.body;
+    const { email, password } = request.body;
     try {
       let user;
 
-      if (!userName) {
+      if (!email) {
         throw new Error("login is required");
       }
       if (!password) {
         throw new Error("o password is required");
       }
 
-      let userDB: any = await User.findOne({ userName: userName });
+      let userDB: any = await User.findOne({ email: email });
 
       if (!userDB) {
 
@@ -116,9 +116,9 @@ class UserController {
   }
 
   async deleteUser(request: Request, response: Response) {
-    const userName = request.query.username;
+    const id = request.query.id;
     try {
-      let res = await User.deleteOne({ userName: userName })
+      let res = await User.deleteOne({ _id: id })
       return response.status(202).send(res);
     } catch (e) {
       return response.status(501).send(e)

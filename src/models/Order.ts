@@ -7,6 +7,7 @@ type Order =  {
   totalPrice: Number,
   title: Array<Title>
   status: String,
+  detail: Object,
 }
 
 export default Order;

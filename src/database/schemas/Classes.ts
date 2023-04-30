@@ -25,7 +25,7 @@ const Classe = new mongoose.Schema({
     require: true
   },
   curso: {
-    type: Array,
+    type: Object,
     require: true,
   },
   price: Number,

@@ -3,10 +3,10 @@ import Grid from "./Grid"
 type Classe = {
 	classeName: String,
 	description: String,
-	curso: Array<String>,
+	curso: Object,
   price: Number,
 	grid: Array<Grid>,
-	students: Array<String>,
+	students: Array<Object>,
 }
 
 export default Classe;

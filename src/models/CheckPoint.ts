@@ -1,5 +1,6 @@
 type CheckPoints = {
 	user: String,
+	userName: String,
 	service: String,
 	moment: Date,
 	scheduled: Date,

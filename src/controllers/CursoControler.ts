@@ -44,7 +44,7 @@ class CursoController {
   }
 
   async editCurso(request: Request, response: Response) {
-    const { description, bio, id , title, price } = request.body;
+    const { description, bio, _id , title, price } = request.body;
     const grid = request.body.grid;
     const curso: CursoModel = {
       title,
@@ -55,7 +55,7 @@ class CursoController {
     }
     try {
       let result = await Curso.updateOne(
-        { _id: id },
+        { _id: _id },
         curso
       )
       return response.status(203).send(result)

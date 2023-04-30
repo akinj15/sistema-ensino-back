@@ -22,6 +22,6 @@ const options: cors.CorsOptions = {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(router);
-app.use(cors());
+app.use(cors(corsOptions));
 
 export default app;
