@@ -1,5 +1,5 @@
 import { Request, Response} from 'express';
-import jwt from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import config from "../../config"
 
 const secret: string = config.db.tokenSecret || ""

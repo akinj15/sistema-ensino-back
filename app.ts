@@ -1,6 +1,6 @@
-import express from "express"
+import * as express from "express"
 import router from "./src/routes"
-import cors from "cors"
+import * as cors from "cors"
 let app = express();
 
 

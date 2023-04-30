@@ -1,7 +1,7 @@
 import { Response, Request } from "express";
 import User from "../database/schemas/User";
-import jwt from "jsonwebtoken";
-import bcryptjs from "bcryptjs"
+import * as jwt from "jsonwebtoken";
+import * as bcryptjs from "bcryptjs"
 import config from "../../config"
 
 import UserModel from "../models/User"
