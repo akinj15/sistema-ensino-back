@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const CheckPoints = new mongoose.Schema({
+const CheckPoint = new mongoose.Schema({
   user: {
     type: String,
     require: true
@@ -35,4 +35,4 @@ const CheckPoints = new mongoose.Schema({
   }
 }, { timestamps: true })
 
-export default mongoose.model("CheckPoints", CheckPoints);
+export default mongoose.model("CheckPoint", CheckPoint);

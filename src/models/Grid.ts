@@ -4,4 +4,4 @@ type Grid = {
 	classHeld: Boolean | null
 }
 
-export default Grid;
+export { Grid };

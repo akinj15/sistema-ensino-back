@@ -1,4 +1,4 @@
-import Title from "./Title";
+import { Title } from "./Title";
 type Order =  {
   name: String,
   description: String,
@@ -10,4 +10,4 @@ type Order =  {
   detail: Object,
 }
 
-export default Order;
+export { Order };

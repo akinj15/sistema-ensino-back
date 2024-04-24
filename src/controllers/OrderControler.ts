@@ -1,7 +1,6 @@
 import { Response, Request } from "express";
 import Order from "../database/schemas/Order";
-import OrderModel from "../models/Order"
-import TitleModel from "../models/Title"
+import { Order as OrderModel, Title as TitleModel } from "../models"
 
 class OrderController {
   async create(request: Request, response: Response) {

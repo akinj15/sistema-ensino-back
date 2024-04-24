@@ -1,6 +1,6 @@
-import * as express from "express"
+import express from "express"
 import router from "./src/routes"
-const cors = require('cors')
+import cors from 'cors';
 let app = express();
 
 // app.use(cors(corsOptions));

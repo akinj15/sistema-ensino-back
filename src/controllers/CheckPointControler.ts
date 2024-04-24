@@ -1,7 +1,6 @@
 import { Response, Request } from "express";
 import CheckPoint from "../database/schemas/CheckPoint";
-import CheckPointModel from "../models/CheckPoint"
-import { stringify } from "querystring";
+import { CheckPoint as CheckPointModel } from "../models"
 
 class CheckPointController {
   async create(request: Request, response: Response) {

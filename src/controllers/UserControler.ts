@@ -4,8 +4,10 @@ import * as jwt from "jsonwebtoken";
 import * as bcryptjs from "bcryptjs"
 import config from "../../config"
 
-import UserModel from "../models/User"
-import ProfileModel from "../models/Profile";
+import { 
+  User as UserModel, 
+  Profile as ProfileModel 
+} from "../models"
 
 class UserController {
   async create(request: Request, response: Response) {

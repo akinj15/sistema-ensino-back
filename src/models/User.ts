@@ -1,4 +1,4 @@
-import Profile from "./Profile"
+import { Profile } from "./Profile"
 type User = {
   _id?: String,
   userName: String,
@@ -8,4 +8,4 @@ type User = {
   password: string,
 };
 
-export default User;
+export { User };

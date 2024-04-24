@@ -1,7 +1,6 @@
 import { Response, Request } from "express";
 import Curso from "../database/schemas/Curso";
-import CursoModel from "../models/Curso"
-import GridModel from "../models/Grid"
+import { Curso as CursoModel, Grid as GridModel} from "../models"
 
 class CursoController {
   async create(request: Request, response: Response) {

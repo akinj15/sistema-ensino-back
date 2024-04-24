@@ -1,7 +1,6 @@
 import { Response, Request } from "express";
 import Classe from "../database/schemas/Classes";
-import GridModel from "../models/Grid"
-import ClasseModel from "../models/Classe"
+import { Grid as GridModel, Classe as ClasseModel} from "../models"
 
 class ClasseController {
   async create(request: Request, response: Response) {

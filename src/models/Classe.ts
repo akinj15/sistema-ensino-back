@@ -1,4 +1,4 @@
-import Grid from "./Grid"
+import { Grid } from "./Grid"
 
 type Classe = {
 	classeName: String,
@@ -9,4 +9,4 @@ type Classe = {
 	students: Array<Object>,
 }
 
-export default Classe;
+export { Classe };

@@ -5,4 +5,4 @@ type Profile = {
   description: String,
 }
 
-export default Profile;
+export { Profile };

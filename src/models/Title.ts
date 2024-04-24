@@ -5,4 +5,4 @@ type Title =  {
   discount: Boolean,
 }
 
-export default Title;
+export { Title };

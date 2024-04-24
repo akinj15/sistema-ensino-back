@@ -1,4 +1,4 @@
-type CheckPoints = {
+type CheckPoint = {
 	user: String,
 	userName: String,
 	service: String,
@@ -9,4 +9,4 @@ type CheckPoints = {
 	classe: String,
 }
 
-export default CheckPoints;
+export { CheckPoint };
